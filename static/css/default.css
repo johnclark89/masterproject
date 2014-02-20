@@ -1,0 +1,45 @@
+ body{
+	width: 900px;          
+            }
+#header {
+	height: 200px;
+	float:left;
+	
+	width: 900px;     
+}
+		
+#menu{
+	width: 200px;
+	float: left;
+	
+}
+#page{
+	width: 700px;
+	padding-top:10px;
+	margin-left: 200px; 
+}
+#alert{
+			color:red;
+            }
+    
+
+
+
+fieldset {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ width: 400px;
+ border:1px solid #2C75FF;
+ }
+legend {
+ color: #2C75FF;
+ font-weight:bold
+ }
+
+
+h2{
+color: green;
+}
+h4{
+color: red;
+}

@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="fr">
+
+<head> 
+    <title>MASTERPROJECT</title>
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css" %}">
+    <style>
+
+        .canton {
+          fill: #bbb;
+        }
+
+        .canton-boundary {
+          fill: none;
+          stroke: #fff;
+          stroke-linejoin: round;
+        }
+
+        text {
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 10px;
+          text-anchor: middle;
+        }
+
+        .counties {
+          fill: none;
+        }
+
+        .states {
+          fill: none;
+          stroke: #fff;
+          stroke-linejoin: round;
+        }
+
+        .q0-9 { fill:rgb(247,251,255); }
+        .q1-9 { fill:rgb(222,235,247); }
+        .q2-9 { fill:rgb(198,219,239); }
+        .q3-9 { fill:rgb(158,202,225); }
+        .q4-9 { fill:rgb(107,174,214); }
+        .q5-9 { fill:rgb(66,146,198); }
+        .q6-9 { fill:rgb(33,113,181); }
+        .q7-9 { fill:rgb(8,81,156); }
+        .q8-9 { fill:rgb(8,48,107); }
+    </style>
+</head>
+
+<body>
+<div id="menu">
+		<img src=" {% static "assets/img/unil.png"%}"/>
+					<table>
+					<ul>
+						<li><a href="/admin/">Admin</a></li>
+					</ul>
+					</table>
+</div>
+
+    <div id="page">
+	
+        <h1>CHVOTE</h1>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://d3js.org/queue.v1.min.js"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <script>
+        var width = 960,
+            height = 600;
+
+        var projection = d3.geo.albers()
+            .rotate([0, 0])
+            .center([8.3, 46.8])
+            .scale(16000)
+            .translate([width / 2, height / 2])
+            .precision(.1);
+
+        var path = d3.geo.path()
+            .projection(projection);
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        d3.json("{% static "assets/canton.json"%}", function(error, swiss) {
+          var cantons = topojson.feature(swiss, swiss.objects.cantons);
+
+          svg.append("path")
+              .datum(cantons)
+              .attr("class", "canton")
+              .attr("d", path);
+
+          svg.append("path")
+              .datum(topojson.mesh(swiss, swiss.objects.cantons, function(a, b) { return a !== b; }))
+              .attr("class", "canton-boundary")
+              .attr("d", path);
+
+
+        });
+
+
+        </script>
+
+
+			
+    </div>
+    
+
+</body>
+</html>
+   
+    
+
+
+
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE metadata SYSTEM "http://www.esri.com/metadata/esriprof80.dtd">-->
+<metadata><idinfo><citation><citeinfo><onlink>\\pri-isi.ad.unil.ch\unilgis\20_Europe\Switzerland\All\Administration\THK\Productive\Communes\2010\c_shp\</onlink><edition>Pro</edition><onlink>http://www.bfs.admin.ch/bfs/portal/fr/index/regionen/thematische_karten/01/02.html</onlink><origin>OFS</origin><origin>Federal Office of Statistics</origin></citeinfo></citation><descript><abstract>Géométries de base (K4) de la Suisse pour la production de cartes thématiques-statistiques à petite échelle -</abstract><supplinf>Only productive surfaces are taken into account (basically, mountain tops are discarded)</supplinf></descript><timeperd><timeinfo><sngdate><caldate>2010</caldate></sngdate><mdattim><sngdate><caldate>
+						</caldate></sngdate></mdattim></timeinfo></timeperd><useconst>a. Objet de la licence 
+En sa qualité de donneur de licence, l'Office fédéral de la statistique (OFS) octroie au client - à titre de preneur de licence - un droit non transmissible et non exclusif d'utilisation des données de l'OFS sélectionnées lors de la commande, et ce aux conditions suivantes. 
+b. Etendue du droit d'utilisation 
+Les données commandées ci-joint peuvent être utilisées, copiées et ajoutées à d'autres données à des fins propres ou commerciales. 
+c. Limitations et obligation d'information 
+- Les données et les produits qui en sont tirés ne peuvent être, à défaut de convention spéciale et écrite avec l'OFS, ni modifiés dans leur géométrie, ni vendus, ni remis en location ou en leasing, ni transmis sous licence. 
+- Les données ne passent pas dans la propriété du preneur de licence ou de l'utilisateur. 
+d. Utilisation commerciale 
+L'utilisation à des fins commerciales requiert l'autorisation écrite de l'Office fédéral de la statistique, ThemaKart, Espace de l'Europe 10, 2020 Neuchâtel. Cette autorisation n'est valable que si elle a été délivrée par écrit par l'OFS ; les questions relatives à l'indemnisation sont réglées dans un contrat écrit.. 
+e. Protection du droit 
+Seuls les droits sur les données formellement octroyés dans le cadre des dispositions de la pré-sente licence reviennent au preneur de licence. Tous les autres droits, en particulier les droits de propriété et les droits d'auteur, restent acquis à la Confédération suisse, représentée par l'OFS. 
+f. Publication 
+L'origine des données doit être indiquée sur tous les plots et publications qui sont remis à des tiers ou publiés, avec la mention "Fond de carte: © OFS, ThemaKart" et l'année de la copie. 
+g. Responsabilité 
+L'exactitude des données ne peut pas être garantie pour des raisons techniques. L'OFS décline toute responsabilité pour d'éventuels dommages qui peuvent résulter de l'utilisation directe ou indi-recte des données, pour autant que cette disposition ne contrevienne pas aux dispositions légales en vigueur. 
+h. Résiliation et fin du rapport contractuel 
+L'OFS peut, en tout temps, dénoncer le contrat de licence si les dispositions juridiques concernant les droits d'auteur ne sont pas respectées ou en cas de violation des clauses du contrat. 
+A la fin du rapport contractuel, toutes les données, y compris les sauvegardes de données, doivent être effacées. L'OFS doit recevoir confirmation écrite de l'effacement des données. 
+i. For judiciaire 
+Le for judiciaire est à Neuchâtel.</useconst><keywords><theme><themekey>Statistics</themekey></theme><place><placekey>Switzerland</placekey></place></keywords><rightID>2</rightID></idinfo><distinfo><stdorder><digform><digtinfo><dssize>0</dssize></digtinfo></digform></stdorder><distrib><cntinfo><cntorgp><cntorg>OFS</cntorg><cntorg>Federal Office of Statistics</cntorg></cntorgp></cntinfo></distrib></distinfo><dataqual><lineage><srcinfo><srcscale>2000000</srcscale></srcinfo></lineage></dataqual><metainfo><geomanager version="1.3.1.57"><modifdate>20130405</modifdate><modiftime>122846</modiftime><manager>ahirzel</manager></geomanager><metc><metd>20130405</metd><cntinfo><cntorgp><cntper>Alexandre Hirzel</cntper></cntorgp><cntemail>GIS-Manager@unil.ch</cntemail></cntinfo></metc></metainfo></metadata>

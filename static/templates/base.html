@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head> 
+    <title>{% block title%}IGD | Matériel{% endblock %}</title>
+    <link rel="stylesheet" type="text/css", href="{% static "assets/css/default.css" %}">
+	
+</head>
+
+
+<body>  
+
+<div id="menu">
+		<img src="{% static "assets/img/unil.png"%}"/>
+	    
+			{% block menubar %}
+					<table>
+					<ul>				
+						<li><a href="/inventaire">Inventaire</a></li>
+						<li><a href="/admin/">Admin</a></li>
+					</ul>
+					</table>
+			{% endblock %}   
+		
+	
+</div>
+    
+                {% block content %}
+                {% endblock %}     
+    
+</body>
+
+</html>
+        
