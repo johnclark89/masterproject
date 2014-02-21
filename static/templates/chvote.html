@@ -8,28 +8,11 @@
     <title>MASTERPROJECT</title>
     <link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css" %}">
     <style>
-
-        .canton {
-          fill: #bbb;
-        }
-
-        .canton-boundary {
-          fill: none;
-          stroke: #fff;
-          stroke-linejoin: round;
-        }
-
-        text {
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 10px;
-          text-anchor: middle;
-        }
-
-        .counties {
+        .communes {
           fill: none;
         }
 
-        .states {
+        .cantons {
           fill: none;
           stroke: #fff;
           stroke-linejoin: round;
@@ -64,39 +47,41 @@
         <script src="http://d3js.org/queue.v1.min.js"></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script>
         <script>
-        var width = 960,
-            height = 600;
 
-        var projection = d3.geo.albers()
-            .rotate([0, 0])
-            .center([8.3, 46.8])
-            .scale(16000)
-            .translate([width / 2, height / 2])
-            .precision(.1);
+            var width = 960,
+                height = 500;
 
-        var path = d3.geo.path()
-            .projection(projection);
+            var rateById = d3.map();
 
-        var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height);
+            var quantize = d3.scale.quantize()
+                .domain([0, .15])
+                .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
 
-        d3.json("{% static "assets/canton.json"%}", function(error, swiss) {
-          var cantons = topojson.feature(swiss, swiss.objects.cantons);
+            var path = d3.geo.path();
 
-          svg.append("path")
-              .datum(cantons)
-              .attr("class", "canton")
-              .attr("d", path);
+            var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height);
 
-          svg.append("path")
-              .datum(topojson.mesh(swiss, swiss.objects.cantons, function(a, b) { return a !== b; }))
-              .attr("class", "canton-boundary")
-              .attr("d", path);
+            queue()
+                .defer(d3.json, "{% static "assets/ch.json"%}")
+                .defer(d3.tsv, "{% static "assets/r.tsv"%}", function(d) { rateById.set(d.id, +d.rate); })
+                .await(ready);
 
+            function ready(error, ch) {
+              svg.append("g")
+                  .attr("class", "communes")
+                .selectAll("path")
+                  .data(topojson.feature(ch, ch.objects.communes).features)
+                .enter().append("path")
+                  .attr("class", function(d) { return quantize(rateById.get(d.id)); })
+                  .attr("d", path);
 
-        });
-
+              svg.append("path")
+                  .datum(topojson.mesh(ch, ch.objects.states, function(a, b) { return a !== b; }))
+                  .attr("class", "cantons")
+                  .attr("d", path);
+            }
 
         </script>
 
